@@ -3,7 +3,7 @@ import numpy as np
 import datetime as dt
 from openpyxl import load_workbook
 from openpyxl.styles.borders import Border, Side
-from openpyxl.styles import PatternFill
+from openpyxl.styles import PatternFill, Alignment
 from Dados import *
 
 class ControlBook():
@@ -202,7 +202,10 @@ class ControlBook():
         for b in range(ws.max_column):
             for i in range(len(e)):
                 ws.cell(row=i + 1, column=b+1).border = thin_border
-        
+        for row in ws[1:ws.max_row]:
+            for position in row:
+                cell = position
+                cell.alignment = Alignment(horizontal='center')
         yellow = PatternFill(fill_type='solid', start_color='00FFFF00', end_color='00FFFF00') #COR DAS CELULAS
         linha = 2
         for i in range(ws.max_row):
