@@ -9,7 +9,8 @@ from Dados import *
 class ControlBook():
 
     def __init__(self):
-        self.planilha_report = pd.read_excel("file.xlsx")
+        self.planilha_report = pd.read_excel("ControlBook/file.xlsx")
+
         
     def create_controlbook(self):
 
@@ -188,7 +189,7 @@ class ControlBook():
                                                            'Tempo de vida (Horas corridas)':'TEMPO DE VIDA (HORAS CORRIDAS)','Ticket Externo':'TICKET EXTERNO'})
         #GERAR O ARQUIVO CONTROLBOOK
         
-        self.planilha_report.to_excel('ControlBook.xlsx', index=False)
+        self.planilha_report.to_excel('ControlBook/ControlBook.xlsx', index=False)
 
         thin_border = Border(left=Side(style='thin'), 
                             right=Side(style='thin'), 
@@ -216,7 +217,7 @@ class ControlBook():
                     for cell in row:
                         cell.fill = yellow
             linha+=1
-        wb.save('ControlBook.xlsx')
+        wb.save('ControlBook/ControlBook.xlsx')
 
 gerar = ControlBook()
 
