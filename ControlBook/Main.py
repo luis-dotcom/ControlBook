@@ -9,7 +9,7 @@ from Dados import *
 class ControlBook():
 
     def __init__(self):
-        self.planilha_report = pd.read_excel("ControlBook/file.xlsx")
+        self.planilha_report = pd.read_excel("file.xlsx")
 
         
     def create_controlbook(self):
