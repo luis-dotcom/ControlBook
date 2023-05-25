@@ -9,9 +9,8 @@ from Dados import *
 class ControlBook():
 
     def __init__(self):
-        self.planilha_report = pd.read_excel("file.xlsx")
+        self.planilha_report = pd.read_excel("ControlBook/ControlBook/file.xlsx")
 
-        
     def create_controlbook(self):
 
         self.planilha_report['Ticket Externo'] = self.planilha_report['Ticket Externo'].fillna('0')
@@ -188,8 +187,8 @@ class ControlBook():
                                                            'Tempo parado (Horas corridas)':'TEMPO PARADO (HORAS CORRIDAS)','Tempo de vida (Descontando parado - Horas corridas)':'TEMPO DE VIDA (DESCONTANDO PARADO - HORAS CORRIDAS)',
                                                            'Tempo de vida (Horas corridas)':'TEMPO DE VIDA (HORAS CORRIDAS)','Ticket Externo':'TICKET EXTERNO'})
         #GERAR O ARQUIVO CONTROLBOOK
-        
-        self.planilha_report.to_excel('ControlBook/ControlBook.xlsx', index=False)
+    def paint(self):    
+        self.planilha_report.to_excel('ControlBook/ControlBook/ControlBook.xlsx', index=False)
 
         thin_border = Border(left=Side(style='thin'), 
                             right=Side(style='thin'), 
@@ -217,8 +216,9 @@ class ControlBook():
                     for cell in row:
                         cell.fill = yellow
             linha+=1
-        wb.save('ControlBook/ControlBook.xlsx')
+        wb.save('ControlBook/ControlBook/ControlBook.xlsx')
 
 gerar = ControlBook()
 
 gerar.create_controlbook()
+gerar.paint()
