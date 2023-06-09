@@ -9,12 +9,11 @@ from Dados import *
 class ControlBook():
 
     def __init__(self):
-        self.planilha_report = pd.read_excel("ControlBook/ControlBook/file.xlsx")
+        self.planilha_report = pd.read_excel("file.xlsx")
 
     def create_controlbook(self):
 
         self.planilha_report['Ticket Externo'] = self.planilha_report['Ticket Externo'].fillna('0')
-        #self.planilha_report['Ticket Externo'] = self.planilha_report['Ticket Externo'].astype(np.int64)
         self.planilha_report['Ticket Externo'] =  self.planilha_report['Ticket Externo'].astype(str)
         #AJUSTES PARA TIPO DATE-TIME
         self.planilha_report['Data de Normalização'] = pd.to_datetime(self.planilha_report['Data de Normalização'])
@@ -178,6 +177,8 @@ class ControlBook():
         self.planilha_report['Responsável: Equipe'] = self.planilha_report['Responsável: Equipe'].fillna('CONECTA +')
         indexnamee = self.planilha_report.loc[self.planilha_report['Responsável: Equipe'] == 'CONECTA +'].index
         self.planilha_report.drop(indexnamee, inplace=True)
+        
+        self.planilha_report = self.planilha_report.sort_values(by='Número')
 
 
         self.planilha_report = self.planilha_report.rename(columns={'Número':'NÚMERO','Categoria':'CATEGORIA','Origem de Abertura':'ORIGEM DE ABERTURA','Serviço (Completo)': 'SERVIÇO', 'Aberto em':'ABERTO EM',
@@ -188,7 +189,7 @@ class ControlBook():
                                                            'Tempo de vida (Horas corridas)':'TEMPO DE VIDA (HORAS CORRIDAS)','Ticket Externo':'TICKET EXTERNO'})
         #GERAR O ARQUIVO CONTROLBOOK
     def paint(self):    
-        self.planilha_report.to_excel('ControlBook/ControlBook/ControlBook.xlsx', index=False)
+        self.planilha_report.to_excel('ControlBook.xlsx', index=False)
 
         thin_border = Border(left=Side(style='thin'), 
                             right=Side(style='thin'), 
@@ -216,7 +217,7 @@ class ControlBook():
                     for cell in row:
                         cell.fill = yellow
             linha+=1
-        wb.save('ControlBook/ControlBook/ControlBook.xlsx')
+        wb.save('ControlBook.xlsx')
 
 gerar = ControlBook()
 
