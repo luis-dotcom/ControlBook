@@ -149,8 +149,14 @@ class ControlBook():
         for i in Dados().clientes_unidades:
             for v in range(len(unidades_clientes)):
                 if i in unidades_clientes[v]:
-                    self.planilha_report['Unidade'][unidades_clientes.index(unidades_clientes[v])] = i
+                    if i == 'SP':
+                        i = 'SÃO PAULO'
+                        self.planilha_report['Unidade'][unidades_clientes.index(unidades_clientes[v])] = i
+                    else:
+                        self.planilha_report['Unidade'][unidades_clientes.index(unidades_clientes[v])] = i
 
+        
+        
 
         #REGRA PARA APAGAR CHAMADOS CANCELADOS E CLIENTES NÃO LISTADOS    
        

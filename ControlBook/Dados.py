@@ -25,7 +25,7 @@ class Dados:
         self.dados_gtw_sebrae = ['ITAPIPOCA','IGUATU','TAUA','CRATEUS','SOBRAL','QUIXERAMOBIM','LIMOEIRO','BATURI','ARACATI','JUAZEIRO']
 
 
-        self.clientes_unidades = ['UNI_ACUJT','UNI_ACUMT','UNI_ACUNO','UNI_ACUPQ','UNI_ACURE','UNI_ACUTO','UNI_AREC','UNI_UCUEB',
+        self.clientes_unidades = ['SP','UNI_ACUJT','UNI_ACUMT','UNI_ACUNO','UNI_ACUPQ','UNI_ACURE','UNI_ACUTO','UNI_AREC','UNI_UCUEB',
                     'LJSAC','LJRES','LJJFO','LJCGC','LJCAS','LJANT','CMCPN','CMANA-CMDAN','CDSSA','AEXUDI','AEXMON',
                     'ACZIM','ACZGP','ACZGG','ACZFT','ACZBT','ACVVA','ACVRE','ACVOP','ACVNA','ACVHD','ACVCA','ACURN',
                      'ACUBT','ACTUR','ACTSR','ACTIJ','ACTHE','ACTBO','ACTAN','ACSST','ACSPM','ACSOB','ACSMA','ACSLZ',
@@ -48,4 +48,5 @@ class Dados:
                      'AABEL','AABAU_BOX','AAATM','AAAGRU_BOX','PAÇO','ZOONOSES','CD CIAL','ARGOS','ALTO CUSTO','VIGILANCIA SANITARIA',
                      'TRANSITO','FEPASA','HOLANDA','JOINVILLE','SARZEDO','FAB4','CDC','HACASA','CANADA','UNI_ACUJG',
                      'UNI_ACUJT','UNI_ACUIA','UNI_ACUFU','UNI_ACUBP','UNI_ACUBO','ACUBH']
+        
 
